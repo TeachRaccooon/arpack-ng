@@ -575,7 +575,9 @@ if (EXAMPLES)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/EXAMPLES/SVD/)
 
     set(examples_STAT_SRCS
-        ssvd.f)
+        ssvd.f
+        dsvd.f
+        my_dsvd.f)
 
     examples(examples_STAT_SRCS)
 
