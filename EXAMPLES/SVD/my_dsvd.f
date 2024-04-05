@@ -466,6 +466,7 @@ c
                call dcopy(m, ax, 1, u(1,j), 1)
                temp = one/dnrm2(m, u(1,j), 1)
                call dscal(m, temp, u(1,j), 1)
+
 c
 c              %---------------------------%
 c              |                           |
@@ -487,6 +488,12 @@ c
                s(j,2) = dnrm2(m, ax, 1)
 c
  20         continue
+
+
+      call system_clock(end_time)
+      elapsed_time = end_time - start_time
+      print *, "Elapsed time (in seconds): ", real(elapsed_time) 
+
 c
 c           %-------------------------------%
 c           | Display computed residuals    |
@@ -529,10 +536,6 @@ c
          print *, ' '
 c
       end if
-
-      call system_clock(end_time)
-      elapsed_time = end_time - start_time
-      print *, "Elapsed time (in seconds): ", real(elapsed_time) / CLOCKS_PER_SEC
 c
 c     %-------------------------%
 c     | Done with program dsvd. |
